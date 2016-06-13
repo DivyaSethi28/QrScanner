@@ -54,20 +54,6 @@
         android:layout_gravity="center"
 
         />
-   <!-- <Button
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="QREad"
-        android:onClick="onQREad"
-        android:layout_gravity="center"
-        />
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="Mobile Vision"
-        android:onClick="onMobVision"
-        />
--->
 
 
 </LinearLayout>
