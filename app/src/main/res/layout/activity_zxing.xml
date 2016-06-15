@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:orientation="vertical"
+    android:background="#333333"
+    tools:context="com.example.divyasethi.qrscanner.Zxing">
+
+
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:id="@+id/decorated"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="#62414141"
+            android:gravity="center"
+            android:text="Scan Airway Bill to be picked up"
+            android:textColor="#FEFEFE"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            />
+        <TableRow
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:id="@+id/line1"
+            android:background="#D10D2E"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tick1"
+            android:visibility="gone"
+            android:id="@+id/scan_tick1"
+            android:layout_gravity="center"
+
+            />
+
+    </com.journeyapps.barcodescanner.DecoratedBarcodeView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Package Picked"
+        android:textColor="#FEFEFE"
+        android:layout_gravity="center"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FEFEFE"
+            android:text="4 "
+            android:textSize="35dp"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FEFEFE"
+            android:text="of 7"
+            android:textSize="25dp"
+            />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Scanning Done"
+        android:textColor="#FEFEFE"
+        android:background="#666666"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        />
+
+
+</LinearLayout>
