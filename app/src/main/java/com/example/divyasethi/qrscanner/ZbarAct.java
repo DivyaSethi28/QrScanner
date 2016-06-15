@@ -30,47 +30,6 @@ public class ZbarAct extends AppCompatActivity implements ZBarScannerView.Result
         zBarScannerView=new ZBarScannerView(this);
         contentFrame.addView(zBarScannerView);
         imageView= (ImageView)findViewById(R.id.scan_tick);
-      /*  Button qr= (Button)findViewById(R.id.qr);
-        Button bar=(Button)findViewById(R.id.bar);
-        Button flash= (Button)findViewById(R.id.flash);
-
-
-
-
-        qr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                formatList=new ArrayList<BarcodeFormat>();
-                formatList.add(BarcodeFormat.QRCODE);
-                zBarScannerView.setFormats(formatList);
-                imageView.setVisibility(View.INVISIBLE);
-                zBarScannerView.startCamera();
-
-            }
-        });
-
-        bar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                formatList=new ArrayList<BarcodeFormat>();
-                formatList.add(BarcodeFormat.CODE128);
-                zBarScannerView.setFormats(formatList);
-                imageView.setVisibility(View.INVISIBLE);
-                zBarScannerView.startCamera();
-            }
-        });
-
-
-        flash.setOnClickListener(new View.OnClickListener() {
-            @Override
-            @TargetApi(Build.VERSION_CODES.M)
-            public void onClick(View v) {
-                    isFlash=!isFlash;
-                    zBarScannerView.setFlash(isFlash);
-                }
-
-            }); */
 
     }
 
