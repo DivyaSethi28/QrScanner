@@ -20,7 +20,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/tick1"
+            android:src="@drawable/tick1"
             android:visibility="gone"
             android:id="@+id/scan_tick"
             android:layout_gravity="center"
