@@ -1,11 +1,13 @@
 package com.example.divyasethi.qrscanner;
 
 import android.content.pm.PackageManager;
+import android.os.CountDownTimer;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -17,11 +19,12 @@ import com.journeyapps.barcodescanner.DecoratedBarcodeView;
 import java.util.List;
 
 
-public class Zxing extends AppCompatActivity {
+public class Zxing extends AppCompatActivity{
 
     private DecoratedBarcodeView barcodeView;
     private ImageView imageView;
     private ActionBar actionBar;
+    private static final int PERMISSION_REQUEST_CODE=1;
 
     private BarcodeCallback barcodeCallback= new BarcodeCallback() {
         @Override
@@ -44,23 +47,32 @@ public class Zxing extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zxing);
+        actionBar=getSupportActionBar();
+        actionBar.setTitle("Scan Shipment");
+        barcodeView= (DecoratedBarcodeView)findViewById(R.id.decorated);
         if(!(ContextCompat.checkSelfPermission(getApplicationContext(),"android.permission.CAMERA")== PackageManager.PERMISSION_DENIED)) {
 
             Toast.makeText(getApplicationContext(),"Camera available",Toast.LENGTH_SHORT).show();
+            scan();
         }
           else  {
+                barcodeView.setVisibility(View.INVISIBLE);
                 String[] permissions= new String[1];
                 permissions[0]= new String("android.permission.CAMERA");
-                ActivityCompat.requestPermissions(this,permissions,0);
+                ActivityCompat.requestPermissions(this,permissions,PERMISSION_REQUEST_CODE);
 
         }
-        barcodeView= (DecoratedBarcodeView)findViewById(R.id.decorated);
-        actionBar=getSupportActionBar();
-        actionBar.setTitle("Scan Shipment");
+
+    }
+
+    private void scan(){
+
+
         barcodeView.setStatusText("");
         barcodeView.removeViewAt(1);
         barcodeView.decodeContinuous(barcodeCallback);
     }
+
 
     @Override
     protected void onPause() {
@@ -72,6 +84,24 @@ public class Zxing extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         barcodeView.resume();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        Log.e("Inside onRequest",Integer.toString(requestCode)+Integer.toString(PERMISSION_REQUEST_CODE));
+        switch (requestCode) {
+            case PERMISSION_REQUEST_CODE:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    Toast.makeText(getApplicationContext(), "Permission Granted, restart app to start scanning", Toast.LENGTH_LONG).show();
+
+                } else {
+
+                    Toast.makeText(getApplicationContext(), "Permission Denied, You cannot scan.", Toast.LENGTH_LONG).show();
+
+                }
+                break;
+        }
     }
 
 }
