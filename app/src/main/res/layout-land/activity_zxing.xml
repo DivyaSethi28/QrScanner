@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:orientation="vertical"
+    android:background="#333333"
+    tools:context="com.example.divyasethi.qrscanner.Zxing"
+    android:id="@+id/container">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/xScannerView">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="#62414141"
+            android:gravity="center"
+            android:text="Scan paket yang akan diambil"
+            android:textColor="#FEFEFE"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp" />
+
+        <TableRow
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:id="@+id/line1"
+            android:background="#D10D2E"
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tick1"
+            android:visibility="gone"
+            android:id="@+id/xScanCompleate"
+            android:layout_gravity="center" />
+
+    </com.journeyapps.barcodescanner.DecoratedBarcodeView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paket diskan"
+        android:textColor="#FEFEFE"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:id="@+id/package_picked"
+        android:layout_below="@+id/xScannerView"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/package_picked"
+        android:layout_centerInParent="true"
+        android:paddingBottom="10dp"
+        android:id="@+id/linearLayout2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FEFEFE"
+            android:text="4 "
+            android:textSize="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FEFEFE"
+            android:text="dari 7"
+            android:textSize="25dp"
+            android:layout_marginBottom="5dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:text="Scanning Selesai"
+        android:textAlignment="center"
+        android:textColor="#FEFEFE"
+        android:background="@drawable/button_shape"
+        android:id="@+id/button"
+        android:layout_alignTop="@+id/linearLayout2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
+
+</FrameLayout>

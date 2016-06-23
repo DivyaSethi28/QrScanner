@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:orientation="vertical"
+    android:background="#000000"
+    android:id="@+id/container"
+    tools:context="com.example.divyasethi.qrscanner.ZbarAct">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <me.dm7.barcodescanner.zbar.ZBarScannerView
+        android:id="@+id/scanner_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="#62414141"
+            android:gravity="center"
+            android:text="Scan paket yang akan diambil"
+            android:textColor="#FEFEFE"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/title"
+            android:layout_alignBottom="@+id/linearLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tick1"
+            android:visibility="gone"
+            android:id="@+id/xScanCompleate"
+            android:layout_gravity="center" />
+
+        </me.dm7.barcodescanner.zbar.ZBarScannerView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paket diskan"
+        android:layout_below="@+id/scanner_view"
+        android:layout_centerInParent="true"
+        android:textColor="#FEFEFE"
+        android:layout_gravity="left"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:id="@+id/textView" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/textView"
+        android:layout_centerInParent="true"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FEFEFE"
+            android:text="4 "
+            android:textSize="50dp"
+            android:layout_gravity="left"
+            android:layout_below="@+id/textView"
+            android:layout_alignLeft="@+id/textView"
+            android:layout_alignStart="@+id/textView"
+            android:id="@+id/textView3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FEFEFE"
+            android:text="dari 7"
+            android:textSize="25dp"
+            android:layout_gravity="left"
+            android:id="@+id/textView2"
+            android:layout_alignTop="@+id/button2"
+            android:layout_toRightOf="@+id/textView3"
+            android:layout_toEndOf="@+id/textView3" />
+
+    </LinearLayout>
+
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:text="Scanning Selesai"
+            android:textAlignment="center"
+            android:textColor="#FEFEFE"
+            android:background="@drawable/button_shape"
+            android:layout_gravity="right"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="28dp"
+            android:id="@+id/button2" />
+
+    </RelativeLayout>
+
+</FrameLayout>
